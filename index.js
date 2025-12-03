@@ -26,6 +26,9 @@ app.get('/', (req, res) => {
 
 app.use('/api/auth', authRouter);
 
+
+app.post("/upload", upload.single("file"), uploadFile);
+
 app.listen(port, () => {
   console.log('Server is running on port 8000');
 });
