@@ -5,7 +5,6 @@ const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
 const { Upload } = require("@aws-sdk/lib-storage");
 
 
-const upload = multer({ storage: multer.memoryStorage()}); // FILE IN MEMORY
 
 const s3 = new S3Client({
   region: process.env.AWS_REGION,
@@ -16,8 +15,9 @@ const s3 = new S3Client({
 });
 
 
-const uploadFile= async (req, res) => {
+const uploadFile = async (req, res) => {
   try {
+    console.log(req.file)
     const file = req.file;
     const Key = `uploads/${Date.now()}_${file.originalname}`;
 

@@ -7,6 +7,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 const authRouter = require('./routers/auth.route');
+const fileRouter=require("./routers/file.router")
 
 const mongoURL = process.env.MONGO_URL || "mongodb+srv://rutikakhedkar:4UWPlJHoUreR5rsN@clusterrutika0.ywl8dvo.mongodb.net/notesapp";
 
@@ -25,9 +26,10 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth', authRouter);
+app.use('/api/file',fileRouter )
 
 
-app.post("/upload", upload.single("file"), uploadFile);
+
 
 app.listen(port, () => {
   console.log('Server is running on port 8000');

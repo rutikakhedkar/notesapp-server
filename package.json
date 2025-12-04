@@ -10,12 +10,16 @@
   "description": "",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.940.0",
+    "@aws-sdk/lib-storage": "^3.943.0",
     "@aws-sdk/s3-request-presigner": "^3.940.0",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "i": "^0.3.7",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^9.0.0"
+    "mongoose": "^9.0.0",
+    "multer": "^2.0.2",
+    "npm": "^11.6.4"
   }
 }
